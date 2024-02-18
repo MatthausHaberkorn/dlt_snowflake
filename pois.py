@@ -36,8 +36,7 @@ def pois_resource(api_secret_key=dlt.secrets.value, api_url=dlt.secrets.value):
 
             # Seek to the beginning of the file
             tmp_file.seek(0)
-            # delete this line
-            tmp_file = "/home/matzi/Downloads/flux-18731-202402112311.zip"
+
             # Open the zip file
             with zipfile.ZipFile(tmp_file, "r") as zip_ref:
                 # Get all file paths in the zip file

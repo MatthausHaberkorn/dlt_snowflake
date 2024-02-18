@@ -1,0 +1,233 @@
+version: 4
+version_hash: RFVYbrY5cHus0oT/BPNaEJDE9RPSzZLpRrXza1PxdGw=
+engine_version: 8
+name: pois_source
+tables:
+  _dlt_version:
+    columns:
+      version:
+        data_type: bigint
+        nullable: false
+      engine_version:
+        data_type: bigint
+        nullable: false
+      inserted_at:
+        data_type: timestamp
+        nullable: false
+      schema_name:
+        data_type: text
+        nullable: false
+      version_hash:
+        data_type: text
+        nullable: false
+      schema:
+        data_type: text
+        nullable: false
+    write_disposition: skip
+    description: Created by DLT. Tracks schema updates
+  _dlt_loads:
+    columns:
+      load_id:
+        data_type: text
+        nullable: false
+      schema_name:
+        data_type: text
+        nullable: true
+      status:
+        data_type: bigint
+        nullable: false
+      inserted_at:
+        data_type: timestamp
+        nullable: false
+      schema_version_hash:
+        data_type: text
+        nullable: true
+    write_disposition: skip
+    description: Created by DLT. Tracks completed loads
+  pois_resource:
+    columns:
+      aid:
+        data_type: text
+        nullable: true
+      dc_identifier:
+        data_type: text
+        nullable: true
+      atype:
+        data_type: complex
+        nullable: true
+      rdfs_comment:
+        data_type: complex
+        nullable: true
+      rdfs_label:
+        data_type: complex
+        nullable: true
+      available_language:
+        data_type: complex
+        nullable: true
+      has_architectural_style:
+        data_type: complex
+        nullable: true
+      has_audience:
+        data_type: complex
+        nullable: true
+      has_been_created_by:
+        data_type: complex
+        nullable: true
+      has_been_published_by:
+        data_type: complex
+        nullable: true
+      has_client_target:
+        data_type: complex
+        nullable: true
+      has_contact:
+        data_type: complex
+        nullable: true
+      has_description:
+        data_type: complex
+        nullable: true
+      has_main_representation:
+        data_type: complex
+        nullable: true
+      has_representation:
+        data_type: complex
+        nullable: true
+      has_theme:
+        data_type: complex
+        nullable: true
+      has_translated_property:
+        data_type: complex
+        nullable: true
+      is_located_at:
+        data_type: complex
+        nullable: true
+      last_update:
+        data_type: text
+        nullable: true
+      last_update_datatourisme:
+        data_type: timestamp
+        nullable: true
+      reduced_mobility_access:
+        data_type: bool
+        nullable: true
+      _dlt_load_id:
+        data_type: text
+        nullable: false
+      _dlt_id:
+        data_type: text
+        nullable: false
+        unique: true
+      owl_same_as:
+        data_type: complex
+        nullable: true
+      offers:
+        data_type: complex
+        nullable: true
+      has_external_reference:
+        data_type: complex
+        nullable: true
+      has_feature:
+        data_type: complex
+        nullable: true
+      has_review:
+        data_type: complex
+        nullable: true
+      covid19_special_measures:
+        data_type: complex
+        nullable: true
+      is_owned_by:
+        data_type: complex
+        nullable: true
+      allowed_persons:
+        data_type: bigint
+        nullable: true
+      creation_date:
+        data_type: text
+        nullable: true
+      has_neighborhood:
+        data_type: complex
+        nullable: true
+      has_booking_contact:
+        data_type: complex
+        nullable: true
+      provides_food_product:
+        data_type: complex
+        nullable: true
+      schema_end_date:
+        data_type: complex
+        nullable: true
+      schema_start_date:
+        data_type: complex
+        nullable: true
+      takes_place_at:
+        data_type: complex
+        nullable: true
+      has_administrative_contact:
+        data_type: complex
+        nullable: true
+      has_management_contact:
+        data_type: complex
+        nullable: true
+      guided:
+        data_type: bool
+        nullable: true
+      has_geographic_reach:
+        data_type: complex
+        nullable: true
+      has_communication_contact:
+        data_type: complex
+        nullable: true
+    write_disposition: append
+  _dlt_pipeline_state:
+    columns:
+      version:
+        data_type: bigint
+        nullable: false
+      engine_version:
+        data_type: bigint
+        nullable: false
+      pipeline_name:
+        data_type: text
+        nullable: false
+      state:
+        data_type: text
+        nullable: false
+      created_at:
+        data_type: timestamp
+        nullable: false
+      version_hash:
+        data_type: text
+        nullable: true
+      _dlt_load_id:
+        data_type: text
+        nullable: false
+      _dlt_id:
+        data_type: text
+        nullable: false
+        unique: true
+    write_disposition: append
+settings:
+  detections:
+  - iso_timestamp
+  default_hints:
+    not_null:
+    - _dlt_id
+    - _dlt_root_id
+    - _dlt_parent_id
+    - _dlt_list_idx
+    - _dlt_load_id
+    foreign_key:
+    - _dlt_parent_id
+    root_key:
+    - _dlt_root_id
+    unique:
+    - _dlt_id
+normalizers:
+  names: snake_case
+  json:
+    module: dlt.common.normalizers.json.relational
+    config:
+      max_nesting: 0
+previous_hashes:
+- 1RInDDDCG19JiuJpOFOgjUtPq8bPvZQtdiyOKKrLE+c=
+- vuB3ap/wdQ41zlSKgrV4pEV0gXEo5PLL4VtbhlAWTiI=
+- dcgQ/xWfYGENrOth2ULyfROBNPCmPH3mrPlPQb9/++0=
